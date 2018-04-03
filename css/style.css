@@ -1,0 +1,45 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+    color: #444;
+    font-family: Arial,Helvetica,sans-serif;
+    margin: 0;
+    font-size: 12px;
+    overflow-x:hidden;
+    position: relative;
+    background: #F5F5F5;
+}
+
+a {
+    color:#4385f5;
+    font-size: 12px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.leftNavContainer{
+        border-right: 1px solid #eee;
+    
+}
+.customslider .slider.slider-horizontal {
+
+    width: 200px;
+}
+.rightNavContainer {
+    /*background: rgba(0, 0, 0, 0) url("../images/flightBG.jpg") no-repeat scroll 0 0 / cover ;*/
+    height: 500px;
+    
+}
+
+.rightNavContainer::after {
+    color: #ffffff;
+    content: "It is time to fly.\a
+        Life is a journey, travel it well.\a
+        Fly the friendly skies of United.";
+    font-size: 20px;
+    margin: 0 0 0 55px;
+    vertical-align: -1049%;
+}
+.page-header {
+    text-align: center;
+}

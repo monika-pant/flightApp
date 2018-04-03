@@ -1,0 +1,162 @@
+<div class="container">
+
+
+    <div class="page-header">
+
+        <h1>
+            Flight Search Engine
+        </h1>
+
+    </div>
+    <div class="leftNavContainer pull-left col-md-4 col-sm-4">
+
+        <!---tabs for journey details -->
+        <div id="deatilsTab">
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab"  href="#tabs-1">One Way</a></li>
+                <li><a data-toggle="tab"  href="#tabs-2">Return</a></li>
+
+            </ul>
+            <div class="tab-content">
+                <div id="tabs-1" class="tab-pane fade in active">
+                    <form name="postOneway1" id="postOneway" ng-submit="postOneway($event, postOneway1.$valid)" ng-controller="form1r"  >
+                        <br>
+                        <div class="input-group col-md-12 col-xs-12">
+                            <input type="text" placeholder="Enter Origin City" class=" form-control" ng-model="oCity1" required>
+
+                        </div>
+                        <br>
+                        <div class="input-group col-md-12 col-xs-12">
+                            <input type="text" placeholder="Enter Destination City" class="form-control" ng-model="dCity1" required>
+                        </div>
+                        <br>
+                        <div class="input-group date" data-provide="datepicker">
+                            <input type="text" class="form-control datepicker" placeholder="Departure date" ng-model="departDt1" required>
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-th"></span>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="input-group date" data-provide="datepicker">
+                            <input type="text" class="form-control datepicker" placeholder="Return date" ng-model="arrtDt1" required>
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-th"></span>
+                            </div>
+                        </div>
+                        <br>
+
+                        <div class="input-group col-md-12 col-xs-12">
+                            <input type="number" min="1" placeholder="Passengers" class=" form-control" ng-model="passenderCount1" >
+                        </div>
+                        <br>
+                        <button class="btn btn-primary" type="submit">Search</button>
+                    </form>
+
+                </div>
+                <div id="tabs-2" class="tab-pane fade">
+                    <form id="posttwoway" name="posttwoway" ng-submit="posttwoway(posttwoway.$valid)">
+                        <br>
+                        <div class="input-group col-md-12 col-xs-12">
+                            <input type="text" placeholder="Enter Origin City" class=" form-control" ng-model="oCity2" required>
+                        </div>
+                        <br>
+                        <div class="input-group col-md-12 col-xs-12">
+                            <input type="text" placeholder="Enter Destination City" class=" form-control" ng-model="dCity2" required>
+                        </div>
+                        <br>
+                        <div class="input-group date" data-provide="datepicker">
+                            <input type="text" class="form-control datepicker" placeholder="Departure date" ng-model="departDt2" required>
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-th"></span>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="input-group date" data-provide="datepicker">
+                            <input type="text" class="form-control datepicker" placeholder="Return date" ng-model="arrtDt2"    required>
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-th"></span>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="input-group col-md-12 col-sm-12">
+                            <input type="number" min="1"  placeholder="Passengers" class=" form-control" ng-model="passenderCount2" required>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+        <br>
+        <div class="panel panel-default customslider">
+            <div class="panel-body">
+                Refine Flight Search
+                <br>
+                <b style="padding:0 5px;margin:0 5px 0 0;">1000</b> 
+                <input id="ex2" type="text" class="span2" value="" data-slider-min="1000" data-slider-max="10000" data-slider-step="100" data-slider-value="[1000,10000]"/> 
+                <b style="padding:0 5px;margin:0 0 0 5px;">10000</b>
+
+            </div>
+        </div>
+
+    </div>
+    
+
+<div class="rightNavContainer pul-left col-md-8 col-sm-8" ng-show="showContainer">
+    
+    <table class="table table-condensed">
+        <tr ng-repeat="flight in flightDataFetched">
+            <td>From : {{flight.from}}</td>
+            <td>To: {{flight.to}}</td>
+            <td>{{flight.arrivalTime}}</td>
+            <td>{{flight.date}}</td>
+            <td>{{flight.departureTime}}</td>
+            <td>{{flight.flightName}}</td>
+            <td>{{flight.flightRate}}</td>
+        </tr>
+    </table>
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="breadCrumb pull-left col-md-8"><h3>Pune &gt; Delhi &gt; Pune</h3></div>
+            <div class="breadCrumb pull-left col-md-4">
+                <div class="row">
+                    <label>Depart :</label><span>1st Aug 2017</span>
+                </div>
+                <div class="row">
+                    <label>Return :</label><span>10th Aug 2017</span>
+                </div>                  
+
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="col-md-4">
+                <div class="row"><h4>Rs 9,500.00</h4></div>
+                <div class="row">Al-202</div>
+                <div class="row">PNQ > DEL</div>
+                <div class="row"><label>Depart : 10.00 AM</label></div>
+                <div class="row"><label>Return : 12.00PM</label></div>
+            </div>
+            <div class="col-md-4">
+                <div class="row"><h4>&nbsp;</h4></div>
+                <div class="row">Al-202</div>
+                <div class="row">DEL > PNQ</div>
+                <div class="row"><label>Depart : 11.00 AM</label></div>
+                <div class="row"><label>Return : 13.00PM</label></div>
+            </div>
+            <div class="col-md-4">
+                <div class="row"><div class="col-md-12" style="min-height: 90px;"><img src="images/flight-01.png" class="img-responsive" alt="Cinque Terre" ></div></div>
+                <div class="row"><button class="btn btn-primary">Book This Flight</button></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</div>
